@@ -1,0 +1,21 @@
+@import 'styles/fonts';
+
+$black: #000;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  color: $black;
+  user-select: none;
+}
+
+.image {
+  width: 500px;
+  height: 300px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/img/methed.jpg');
+}
