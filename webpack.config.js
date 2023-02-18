@@ -13,31 +13,22 @@ module.exports = {
   target,
   mode,
   devtool,
+  
   devServer: {
     port: 3000,
     open: true,
     hot: true,
   },
+  
   entry: {
-    main: path.resolve(__dirname, '/index.js'),
+    main: path.resolve(__dirname, '/js/index.js'),
   },
+  
   output: {
-    filename: '[name].[contenthash].js',
+    filename: 'js/[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'img/[name][ext]',
   },
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, '/index.html'),
-      filename: "index.html",
-    }),
-    
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
-    
-    new CleanWebpackPlugin(),
-  ],
   
   module: {
     rules: [
@@ -47,6 +38,7 @@ module.exports = {
       },
       {
         test: /\.(c|sa|sc)ss$/i,
+        exclude: /node_modules/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
@@ -72,6 +64,7 @@ module.exports = {
       },
       {
         test: /\.woff2?$/i,
+        exclude: /node_modules/,
         type: 'asset/resource',
         generator: {
           filename: 'fonts/[name][ext]',
@@ -79,6 +72,7 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
+        exclude: /node_modules/,
         use: devMode
           ? []
           : [
@@ -116,8 +110,21 @@ module.exports = {
               ['@babel/preset-env', { targets: "defaults" }]
             ]
           }
-        }
+        },
       }
     ],
   },
+  
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, '/index.html'),
+      filename: "index.html",
+    }),
+    
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash].css',
+    }),
+    
+    new CleanWebpackPlugin(),
+  ],
 };

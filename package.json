@@ -11,8 +11,7 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack serve",
-    "build-dev": "webpack",
-    "build-prod": "webpack --node-env=production"
+    "build": "webpack --node-env=production"
   },
   "browserslist": [
     ">0.2%",
@@ -37,6 +36,7 @@
     "postcss-preset-env": "^8.0.1",
     "resolve-url-loader": "^5.0.0",
     "sass-loader": "^13.2.0",
+    "smart-grid": "^2.1.2",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
