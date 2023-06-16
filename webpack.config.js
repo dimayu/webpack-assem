@@ -1,7 +1,10 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const nunjucks = require('nunjucks');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -34,7 +37,26 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        use: {
+          loader: 'html-loader',
+          options: {
+            preprocessor: async (content, loaderContext) => {
+              let result;
+              let env = nunjucks.configure(path.resolve(__dirname, "src/"), { autoescape: true });
+        
+              try {
+                result = content;
+                result = nunjucks.renderString(content);
+              } catch (error) {
+                await loaderContext.emitError(error);
+          
+                return content;
+              }
+        
+              return result;
+            },
+          },
+        }
       },
       {
         test: /\.(c|sa|sc)ss$/i,
@@ -113,10 +135,25 @@ module.exports = {
       template: path.resolve(__dirname, '/index.html'),
       filename: "index.html",
     }),
+    new HTMLWebpackPlugin({
+      template: path.resolve(__dirname, '/home.html'),
+      filename: "home.html",
+    }),
+  
+    new FaviconsWebpackPlugin({
+      logo: './favicon/icon.png',
+      cache: true,
+      publicPath: 'favicon',
+      outputPath: 'favicon',
+      prefix: '',
+      inject: true,
+    }),
     
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
     }),
+  
+    new ImageminWebpWebpackPlugin(),
     
     new CleanWebpackPlugin(),
   ],

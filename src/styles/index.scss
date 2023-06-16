@@ -1,5 +1,14 @@
-@import 'base/general';
+/* -------------- Стили для сброса стилей по дефолту --------------*/
+@import 'base/reset';
+
+/* -------------- Подключение шрифтов --------------*/
 @import 'base/fonts';
-@import 'helpers/variables';
-@import 'helpers/smart-grid';
+
+/* -------------- Стили для скроллбара --------------*/
+@import "helpers/scrollbar";
+
+/* -------------- Стили компонентов --------------*/
+@import "../components/components";
+
+/* -------------- Остальные стили --------------*/
 @import 'main';

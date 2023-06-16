@@ -1,103 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>webpack</title>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport"
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>webpack</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
-<body>
-<main class="main">
-  <section class="calculator">
-    <div class="wrapper">
-      <form action="" class="calculator__form">
-        <h2 class="calculator__title">Рассчитайте стоимость<br>автомобиля в лизинг</h2>
-        <div class="calculator__items">
-          <div class="calculator-input" id="cost">
-            <span class="calculator-input__title">
-              Стоимость автомобиля
-            </span>
-            <div class="calculator-input__value">
-              <input type="number"
-                     step="5000"
-                     min="1500000"
-                     max="10000000"
-                     placeholder="3300000"
-                     class="calculator-input__value--number"
-              >
 
-              <span class="calculator-input__value--unit">
-                ₽
-              </span>
-              <input type="range"
-                     step="5000"
-                     min="1500000" max="10000000"
-                     class="calculator-input__value--range"
-              >
-            </div>
-          </div>
-          <div class="calculator-input" id="fee">
-            <span class="calculator-input__title">
-              Первоначальный взнос
-            </span>
-            <div class="calculator-input__value">
-              <input type="number"
-                     step="5000"
-                     min="100000"
-                     max="2600000"
-                     placeholder="420000"
-                     class="calculator-input__value--number"
-              >
-              <span class="calculator-input__value--label">
-                  <span id="percent">0</span>
-                  <span>%</span>
-              </span>
-              <input type="range"
-                     step="5000"
-                     min="100000" max="2600000"
-                     class="calculator-input__value--range"
-              >
-            </div>
-          </div>
-          <div class="calculator-input" id="term">
-            <span class="calculator-input__title">
-              Срок лизинга
-            </span>
-            <div class="calculator-input__value">
-              <input type="number"
-                     step="1"
-                     min="6"
-                     max="120"
-                     placeholder="60"
-                     class="calculator-input__value--number"
-              >
-              <span class="calculator-input__value--unit">
-                мес.
-              </span>
-              <input type="range"
-                     step="1"
-                     min="6" max="120"
-                     class="calculator-input__value--range"
-              >
-            </div>
-          </div>
-        </div>
-        <div class="result-items">
-          <div class="result-items__item">
-            <p class="result-items__item--title">Сумма договора лизинга</p>
-            <p class="result-items__item--price">4 467 313 ₽</p>
-          </div>
-          <div class="result-items__item">
-            <p class="result-items__item--title">Ежемесячный платеж от</p>
-            <p class="result-items__item--price">114 455 ₽</p>
-          </div>
-          <button class="result-items__item btn">Оставить заявку</button>
-        </div>
-      </form>
-    </div>
-  </section>
-</main>
+<body>
+    <!-- Header start -->
+    {% include "./components/header/header.njk" %}
+    <!-- Header end -->
+
+
+    <!-- Main start -->
+    <main class="main">
+
+    </main>
+    <!-- Main end -->
+
+
+    <!-- Footer start -->
+    {% include "./components/footer/footer.njk" %}
+    <!-- Footer end -->
 </body>
+
 </html>
