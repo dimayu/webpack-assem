@@ -12,7 +12,8 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --node-env=production",
-    "sprite": "svg-sprite -s --symbol-dest src/img/sprite --symbol-sprite sprite.svg src/img/sprite/*.svg"
+    "sprite": "svg-sprite -s --symbol-dest src/img/sprite --symbol-sprite sprite.svg src/img/sprite/*.svg",
+    "stylelint": "stylelint \"**/*.scss\" --fix"
   },
   "browserslist": [
     ">0.2%",
@@ -44,6 +45,11 @@
     "sass-loader": "^13.2.0",
     "smart-grid": "^2.1.2",
     "style-loader": "^3.3.1",
+    "stylelint": "^15.8.0",
+    "stylelint-config-recess-order": "^4.2.0",
+    "stylelint-config-standard": "^33.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-webpack-plugin": "^4.1.1",
     "svg-sprite": "^2.0.2",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",

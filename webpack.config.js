@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -139,6 +140,8 @@ module.exports = {
       template: path.resolve(__dirname, '/home.html'),
       filename: "home.html",
     }),
+  
+    new StylelintPlugin(),
   
     new FaviconsWebpackPlugin({
       logo: './favicon/icon.png',

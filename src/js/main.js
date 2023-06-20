@@ -9,6 +9,6 @@ window.addEventListener('load', () => {
   // Mobile menu
   mobileMenu(burgerButton, menu);
   
-  //Mask
+  // Mask
   // maskInput('.phone-input');
 });

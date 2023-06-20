@@ -2,21 +2,21 @@
 @import "helpers/variables";
 
 .wrapper {
-  @include wrapper();
+  @include wrapper;
 }
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Nekst', sans-serif;
-  font-style: normal;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Nekst, sans-serif;
   font-size: 16px;
-  color: $black;
+  font-style: normal;
   line-height: 1;
+  color: $black;
   letter-spacing: -0.02px;
   background-color: #fff;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -25,22 +25,22 @@ body {
 }
 
 .btn {
-  height: 68px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 40px;
-  background-color: $yellow;
-  font-family: 'Nekst', sans-serif;
+  justify-content: center;
+  height: 68px;
+  font-family: Nekst, sans-serif;
   font-size: 30px;
   line-height: 36px;
   color: #fff;
+  background-color: $yellow;
+  border-radius: 40px;
 
   &:hover {
     background-color: $black;
   }
 
   &:disabled {
-    background: rgba(255, 149, 20, 0.4);
+    background: rgba(255, 149, 20, .4);
   }
 }
