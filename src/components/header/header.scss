@@ -1,7 +1,10 @@
 @import "../../styles/helpers/smart-grid";
-@import "../../styles/helpers/smart-grid";
+@import "../../styles/helpers/variables";
 
 .header {
+  width: 100%;
+  will-change: scroll-position;
+
   &__items {
     display: flex;
     justify-content: space-between;
@@ -26,6 +29,13 @@
 
       }
     }
+  }
+
+  &.fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 0 4px 0 0 rgba(71, 71, 71, .5);
   }
 }
 
@@ -74,6 +84,7 @@
     overflow: hidden;
     z-index: 2;
     background-color: $black;
+    padding: 0;
 
     &__list {
       height: 100%;
@@ -112,7 +123,7 @@
     width: 30px;
     height: 1px;
     margin: 0 0 6px 0;
-    background-color: #fff;
+    background-color: $yellow;
     transition: all .4s cubic-bezier(0.23, 1, 0.32, 1);
 
     &:last-child {

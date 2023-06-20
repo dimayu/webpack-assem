@@ -1,22 +1,14 @@
-import { firstScreen, header, burgerButton, menu } from './elementsNodeList';
+import { header, burgerButton, menu, } from './elementsNodeList';
+import { fixedHeader, mobileMenu, maskInput } from './helpers';
 
 window.addEventListener('load', () => {
   
   // Функция для фиксированной шапки при скролле
-  function headerFixed() {
-    const headerStickyObserver = new IntersectionObserver(([entry]) => {
-      header.classList.toggle('sticky', !entry.isIntersecting);
-    });
-    
-    if (firstScreen) {
-      headerStickyObserver.observe(firstScreen);
-    }
-  }
-  headerFixed();
+  fixedHeader(header);
   
-  burgerButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    burgerButton.classList.toggle("active");
-    menu.classList.toggle("active")
-  });
+  // Mobile menu
+  mobileMenu(burgerButton, menu);
+  
+  //Mask
+  // maskInput('.phone-input');
 });

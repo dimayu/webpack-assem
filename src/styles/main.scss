@@ -17,6 +17,7 @@ body {
   letter-spacing: -0.02px;
   background-color: #fff;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .main {
@@ -30,12 +31,10 @@ body {
   align-items: center;
   border-radius: 40px;
   background-color: $yellow;
-  border: none;
   font-family: 'Nekst', sans-serif;
   font-size: 30px;
   line-height: 36px;
   color: #fff;
-  cursor: pointer;
 
   &:hover {
     background-color: $black;
