@@ -8,7 +8,10 @@
     "scss/at-rule-no-unknown": true,
     "import-notation": ["string"],
     "color-function-notation": ["legacy"],
-    "alpha-value-notation": ["number"]
+    "alpha-value-notation": ["number"],
+    "no-descending-specificity": null,
+    "selector-class-pattern": null,
+    "keyframes-name-pattern": null
   },
   "plugins": [
     "stylelint-order"

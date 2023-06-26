@@ -94,7 +94,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(jpe?g|png|webp|gif|svg)$/i,
+        test: /\.(jpe?g|png|webp|gif)$/i,
         exclude: /node_modules/,
         use: devMode
           ? []
