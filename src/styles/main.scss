@@ -44,3 +44,32 @@ body {
     background: rgba(255, 149, 20, .4);
   }
 }
+
+.tooltip__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 11px 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  pointer-events: none;
+  background-color: #FFF;
+  border-radius: 6px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    left: 25px;
+    width: 0;
+    height: 0;
+    margin-left: -10px;
+    content: "";
+    border-top: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    transition: all 0.3s ease-in-out;
+  }
+}

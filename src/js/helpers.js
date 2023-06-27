@@ -78,4 +78,27 @@ export const tabs = (tabLinks, tabContent) => {
     document.querySelector("#" + tab).classList.add("active");
     btnTarget.classList.add("active");
   }
-}
+};
+
+//tooltip
+export const tooltip = (document, window, tooltipBtn) => {
+  [].forEach.call(tooltipBtn, function(el) {
+    const tooltipText = document.createElement('div');
+    
+    tooltipText.textContent = el.getAttribute('data-tooltip');
+    tooltipText.classList.add('tooltip__text');
+    
+    el.addEventListener('mouseover', function() {
+      document.body.appendChild(tooltipText);
+    }, false);
+    
+    el.addEventListener('mouseout', function() {
+      document.body.removeChild(tooltipText);
+    }, false);
+    
+    el.addEventListener('mousemove', function(e) {
+      tooltipText.style.top = (e.pageY - 50) + 'px';
+      tooltipText.style.left = (e.pageX - 20) + 'px';
+    }, false);
+  });
+};

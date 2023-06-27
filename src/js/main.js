@@ -1,6 +1,13 @@
 import "../components/components";
-import { header, burgerButton, menu, tabLinks, tabContent } from './elementsNodeList';
-import { fixedHeader, mobileMenu, maskInput, tabs } from './helpers';
+import {
+  header,
+  burgerButton,
+  menu,
+  tabLinks,
+  tabContent,
+  tooltipBtn,
+} from './elementsNodeList';
+import { fixedHeader, mobileMenu, maskInput, tabs, tooltip } from './helpers';
 
 window.addEventListener('load', () => {
   
@@ -15,4 +22,7 @@ window.addEventListener('load', () => {
   
   //tabs
   tabs(tabLinks, tabContent);
+  
+  //tooltip
+  tooltip(document, window, tooltipBtn);
 });
