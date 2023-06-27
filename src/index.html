@@ -19,6 +19,9 @@
 <!-- Main start -->
 <main class="main">
   <div class="wrapper">
+    <button type="button" class="btn js-modal" data-modal="#modal_1">
+      Заказать звонок
+    </button>
 
     {% include "./components/tabs/tabs.njk" %}
     {% include "./components/accordion/accordion.njk" %}
@@ -28,6 +31,7 @@
 </main>
 <!-- Main end -->
 
+{% include "./components/modal/modal.njk" %}
 
 <!-- Footer start -->
 {% include "./components/footer/footer.njk" %}
