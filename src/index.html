@@ -12,9 +12,12 @@
 
 <body>
 <!-- Header start -->
-{% include "./components/header/header.njk" %}
+<include custom-src="components/header/header.html" src="components/header/header.html">
+  {
+  "logo": "logo"
+  }
+</include>
 <!-- Header end -->
-
 
 <!-- Main start -->
 <main class="main">
@@ -22,20 +25,23 @@
     <button type="button" class="btn js-modal" data-modal="#modal_1">
       Заказать звонок
     </button>
+    <include custom-src="components/tabs/tabs.html" src="components/tabs/tabs.html">
+    </include>
 
-    {% include "./components/tabs/tabs.njk" %}
-    {% include "./components/accordion/accordion.njk" %}
+    <include custom-src="components/accordion/accordion.html" src="components/accordion/accordion.html">
+    </include>
 
     <button data-tooltip="эта подсказка должна" class="tooltip">Короткая кнопка</button>
   </div>
 </main>
 <!-- Main end -->
 
-{% include "./components/modal/modal.njk" %}
+<include custom-src="components/modal/modal.html" src="components/modal/modal.html">
+</include>
 
-<!-- Footer start -->
-{% include "./components/footer/footer.njk" %}
-<!-- Footer end -->
+<include custom-src="components/footer/footer.html" src="components/footer/footer.html">
+</include>
+
 </body>
 
 </html>

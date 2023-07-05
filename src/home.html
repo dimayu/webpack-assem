@@ -10,7 +10,11 @@
 </head>
 <body>
   <!-- Header start -->
-  {% include "./components/header/header.njk" %}
+  <include custom-src="components/header/header.html" src="components/header/header.html">
+    {
+    "logo": "logo"
+    }
+  </include>
   <!-- Header end -->
 
 
@@ -21,7 +25,8 @@
 
 
   <!-- Footer start -->
-  {% include "./components/footer/footer.njk" %}
+  <include custom-src="components/footer/footer.html" src="components/footer/footer.html">
+  </include>
   <!-- Footer end -->
 </body>
 </html>

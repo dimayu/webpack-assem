@@ -32,7 +32,11 @@ npm run sprite
     </svg>
 ```
 
-### Nunjucks
+### posthtml-include
 ```html
-  {% include "./components/header/header.njk" %}
+  <include custom-src="components/header/header.html" src="components/header/header.html">
+  {
+  "logo": "logo"
+  }
+</include>
 ```

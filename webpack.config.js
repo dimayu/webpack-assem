@@ -1,10 +1,9 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const nunjucks = require('nunjucks');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const StylelintPlugin = require('stylelint-webpack-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
@@ -37,27 +36,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        use: {
-          loader: 'html-loader',
-          options: {
-            preprocessor: async (content, loaderContext) => {
-              let result;
-              let env = nunjucks.configure(path.resolve(__dirname, "src/"), { autoescape: true });
-        
-              try {
-                result = content;
-                result = nunjucks.renderString(content);
-              } catch (error) {
-                await loaderContext.emitError(error);
-          
-                return content;
-              }
-        
-              return result;
-            },
-          },
-        }
+        test: /\.(html|njk)$/i,
+        use: [
+            'html-loader',
+          {
+            loader: 'posthtml-loader',
+            options: {
+              plugins: [
+                require('posthtml-include')({
+                  root: path.resolve(__dirname, 'src')
+                })
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.(c|sa|sc)ss$/i,
